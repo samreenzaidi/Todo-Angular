@@ -1,0 +1,26 @@
+<div class="layout-column align-items-center justify-content-start">
+  <section class="layout-row align-items-center justify-content-center mt-30">
+    <input data-test-id="input-note-title" type="text" class="large mx-8" [(ngModel)]="titleModel"
+           placeholder="Note Title"/>
+    <input data-test-id="input-note-status" type="text" class="large mx-8" [(ngModel)]="statusModel"
+           placeholder="Note Status"/>
+    <button class="" data-test-id="submit-button" (click)="createQuicknotes()">Add Note</button>
+  </section>
+
+  <div class="card w-40 pt-30 pb-8">
+    <table>
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Status</th>
+      </tr>
+      </thead>
+      <tbody data-test-id="notesList">
+      <tr *ngFor="let i of notes">
+        <td>{{ i.title }}</td>
+        <td>{{ i.status }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
